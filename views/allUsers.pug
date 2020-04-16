@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h3 All Users
+    ul.list-group
+        each currUser in allUsers
+            if currUser.email != MY_EMAIL || (user && user.email == MY_EMAIL)
+                li.list-group-item
+                    a(href=`/users/profile/${currUser._id}`) #{currUser.name}

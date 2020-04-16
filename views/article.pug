@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= currArticle.title
+  if currUser
+    h5 Written by #{currUser.name}
+  p= currArticle.body
+  hr
+  if user
+    if user.id == currArticle.author || user.email == MY_EMAIL
+      a.my-btn(href=`/articles/edit/${currArticle._id}`) Edit 
+      a.my-btn.btn-delete(href='/articles/delete/'+currArticle._id) Delete

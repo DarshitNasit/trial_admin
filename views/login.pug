@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Login
+  form(method='POST', action='/users/login')
+    div#form-group
+      label(for='email') Email:
+      input.form-control(name='email' type='email' required)
+    div#form-group
+      label(for='password') Password:
+      input.form-control(name='password' type='password' required)
+    br
+    input.btn.my-btn(type='submit' value='Submit')

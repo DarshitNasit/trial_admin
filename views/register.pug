@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1 Register
+  form(method='POST', action='/users/register')
+    #form-group
+      label(for='name') Name:
+      input.form-control(name='name' type='text' value=`${typeof(name) !== 'undefined' ? name : ''}` required)
+    #form-group
+      label(for='email') Email:
+      input.form-control(name='email' type='email' value=`${typeof(email) !== 'undefined' ? email : ''}` required)
+    #form-group
+      label(for='password') Password:
+      input.form-control(name='password' type='password' required)
+    #form-group
+      label(for='password2') Confirm Password:
+      input.form-control(name='password2' type='password' required)
+    br
+    input.my-btn(type='submit' value='Submit')

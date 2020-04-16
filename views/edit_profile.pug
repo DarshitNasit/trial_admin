@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1 #{currUser.name}
+    form(method='POST' action='/users/edit-profile/'+currUser._id)
+        #form-group
+            label(for='name') Name:
+            input.form-control(name='name' type='text' value=currUser.name)
+        br
+        input.my-btn(type='submit' value='Submit')
+        a.my-btn.btn-delete(href=`/users/delete-profile/${currUser._id}`) Delete

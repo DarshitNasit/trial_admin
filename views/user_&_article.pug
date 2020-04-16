@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h3 User Info
+    ul.show-user
+        li Name : #{currUser.name}
+        li Email : #{currUser.email}
+        if user
+            if user.id == currUser._id || user.email == MY_EMAIL
+                li
+                    a(href=`/users/edit-profile/${currUser._id}`) Edit Profile
+    
+    h3 User's Articles
+    ul.show-article
+        for article in currArticles
+            li
+                a(href=`/articles/view-article/${article._id}`) #{article.title}

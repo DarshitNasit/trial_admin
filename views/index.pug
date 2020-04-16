@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h3  Available Articles
+  ul.list-group
+    each article in articleAuthor
+      li.list-group-item
+        a(href=`/articles/${article.id}`) #{article.title}
+          span.tooltiptext Author #{article.name}

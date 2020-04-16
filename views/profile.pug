@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1= currUser.name
+    h3= currUser.email
+    hr
+    a.btn.btn-default(href='/users/edit/'+currUser._id) Edit 
+    a.btn.btn-danger.delete-article(href='/users/delete/'+currUser._id) Delete
